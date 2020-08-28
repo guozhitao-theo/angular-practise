@@ -1,1 +1,39 @@
 <p>display-data works!</p>
+<p>{{title}}</p>
+<input type="radio" name="colors" (click)="color='lightgreen'"> 绿色
+<input type="radio" name="colors" (click)="color='yellow'"> 黄色
+<input type="radio" name="colors" (click)="color='cyan'"> 天蓝色把
+<p [appHighlight]="color" [defaultColor]="'green'">(鼠标移入看颜色)失去焦点  事件 blur</p>
+<input #box3 (keyup.enter)="onKey(box3.value)" (blur)="onKey(box3.value)">
+<p>{{values}}</p>
+
+<!-- 循环渲染 -->
+<p *ngFor="let i of heros">{{i.id}} {{i.name}}</p>
+<p>显示大于 3 的</p>
+<p *ngFor="let i of heros">
+<ng-container *ngIf="i.id > 3">
+    {{i.id}} {{i.name}} 
+</ng-container>
+</p>
+<!-- 绑定类型与绑定目标 -->
+<!-- <img [src]="herourl" alt=""> -->
+<!-- <div [[ngClass]="{'class': true}"]>ngclass</div> -->
+
+<button (click)="add(1)">{{count}} 加</button>
+<button (click)="add(-1)">{{count}} 减</button>
+<p>数据双向绑定</p>
+<input [(ngModel)]="name" type="text">
+<p>元素 添加自定义属性</p>
+<button [attr.aria-label]="'hello'" mat-button>text</button>
+<p>添加class</p>
+<button [class]="'gzt'">点</button>
+<a [style.color]="'red'" [style.fontSize]="'80px'">红色</a>
+<!-- 从模板引用变量获得用户输入 -->
+<input #box (keyup)="0">
+<p>{{box.value}}</p>
+
+<input #box1 (keyup)="onKey(box1.value)">
+<p>{{values}}  {{box1.value}}</p>
+<p>按键事件过滤</p>
+<input #box2 (keyup.enter)="onKey(box2.value)">
+<p>{{values}}  {{box1.value}}</p>

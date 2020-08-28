@@ -1,27 +1,8 @@
-# AngularPractise
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+# angular 遇到的问题 以及如何解决
+1. 报错 `1. If 'app-display-data' is an Angular component, then verify that it is part of this module. 2.If 'app-display-data' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.`
+    ==原因：== 组件没有在.module.ts 文件中注册，或者可以直接在路由懒加载
+2. 使用表单组件的时候报错
+    ==解决：== 需要在 module.ts 中 引入 import { FormsModule } from '@angular/forms';并注册到import中
+3. 属性绑定的时候，绑定总是优先于静态值
+4. 照官网流程自定义属性指令的时候，发现 指令仅能在 根组件生效
+    ==解决：==在angular中共享的只有service，其它的都不行 ，将指令 包装成 模块 然后以模块的方式去引入。（）
