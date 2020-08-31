@@ -1,5 +1,12 @@
 <p>display-data works!</p>
 <p>{{title}}</p>
+<p (click)="changeCondition()">结构指令 点击切换</p>
+<p *appUnless="condition" class="">
+    语句二
+</p>
+<p *appUnless="!condition">
+    语句1
+</p>
 <input type="radio" name="colors" (click)="color='lightgreen'"> 绿色
 <input type="radio" name="colors" (click)="color='yellow'"> 黄色
 <input type="radio" name="colors" (click)="color='cyan'"> 天蓝色把

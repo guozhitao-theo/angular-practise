@@ -6,3 +6,5 @@
 3. 属性绑定的时候，绑定总是优先于静态值
 4. 照官网流程自定义属性指令的时候，发现 指令仅能在 根组件生效
     ==解决：==在angular中共享的只有service，其它的都不行 ，将指令 包装成 模块 然后以模块的方式去引入。（）
+5. 自定义结构指令报错： core.js:7813 Can't bind to 'appAppunless' since it isn't a known property of 'p'.
+    input  set 的名字 必须和 selector 以及指令名 一致 

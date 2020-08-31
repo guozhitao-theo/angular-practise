@@ -7,6 +7,7 @@ import { Hero } from 'src/app/class/hero';
   styleUrls: ['./display-data.component.less']
 })
 export class DisplayDataComponent implements OnInit {
+  condition = false;
   color: string;
   title = 'gzt';
   hero = ['小明', '小品里', '效力', '校长', '小红'];
@@ -31,6 +32,10 @@ export class DisplayDataComponent implements OnInit {
   public onKey(val: string): void {
     console.log(val);
     this.values = val;
+  }
+  public changeCondition(): void {
+    console.log(this.condition);
+    this.condition = !this.condition;
   }
 
 }

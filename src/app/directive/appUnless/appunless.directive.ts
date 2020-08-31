@@ -1,11 +1,12 @@
 import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
 
 @Directive({
-  selector: '[appAppunless]'
+  selector: '[appUnless]'
 })
 export class AppunlessDirective {
   private hasView = false;
   @Input() set appUnless(condition: boolean) {
+    console.log(condition);
     if (!condition && !this.hasView) { // 如果条件为假 并且以前 为创建过该视图，告诉视图容器 根据模板创建一个内嵌视图
       this.viewContainer.createEmbeddedView(this.templateRef);
       this.hasView = true;

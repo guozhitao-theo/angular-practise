@@ -3,8 +3,7 @@ import { AppunlessDirective } from './appunless.directive';
 
 @NgModule({
     declarations: [AppunlessDirective],
-    exports: [AppunlessDirective]
-
+    exports: [AppunlessDirective],
 })
 export class AppunlessDirectiveModule {
 
